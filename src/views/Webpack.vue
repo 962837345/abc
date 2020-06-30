@@ -47,7 +47,7 @@
     </pre>
 
       <h3>处理.vue文件</h3>
-      <p>使用npm安装vue-loader 和 vue-template-compiler -D</p>
+      <p>使用npm安装vue-loader 和 vue-template-compiler</p>
       <pre>
       <code class="hljs">npm install vue-loader vue-template-compiler -D</code>
     </pre>
@@ -166,45 +166,6 @@ module.export{
   }
 </script>
 
-<style>
-  .page_component h2 {
-    font-weight: 400;
-    color: #1f2f3d;
-    font-size: 28px;
-  }
-
-  .page_component h3 {
-    font-weight: 400;
-    color: #1f2f3d;
-    margin: 50px 0 22px;
-    font-size: 23px;
-  }
-
-  .page_component p {
-    font-size: 14px;
-    color: #5e6d82;
-    line-height: 1.5em;
-  }
-
-  code {
-    background-color: #f9fafc;
-    padding: 0 4px;
-    border: 1px solid #eaeefb;
-    border-radius: 4px;
-  }
-
-  .hljs {
-    line-height: 18px;
-    font-family: Menlo, Monaco, Consolas, Courier, monospace;
-    font-size: 12px;
-    padding: 18px 24px;
-    background-color: #fafafa;
-    border: 1px solid #eaeefb;
-    border-radius: 4px;
-    display: block;
-    overflow-x: auto;
-    color:  #3182bd;
-  }
-
-
+<style scoped>
+  @import "../../public/CSS/style.css";
 </style>

@@ -9,12 +9,14 @@
         <el-input v-model="input" :placeholder="placeholder" style="width: 200px"></el-input>
       </div>
       <pre>
-          <code class="hljs">&lt;el-input v-model=<span class="hljs-string">"input"</span> :placeholder="placeholder"&gt;&lt;/el-input>
+          <code class="hljs">&lt;template&gt;
+  &lt;el-input :placeholder=<span class="hljs-string">"placeholder"</span>&gt;&lt;/el-input>
+&lt;/template&gt;
+
 &lt;script&gt;
 export default {
   data() {
     return {
-      input: '',
       placeholder: '请输入内容'
     }
   }
@@ -31,19 +33,76 @@ export default {
         <el-button @click="click">click me</el-button>
       </div>
       <pre>
-          <code class="hljs">&lt;el-button @click=<span class="hljs-string">"click"</span> &gt;click me&lt;/el-button>
+          <code class="hljs">&lt;template&gt;
+  &lt;el-button @click=<span class="hljs-string">"click"</span> &gt;click me&lt;/el-button>
+&lt;/template&gt;
 
 &lt;script&gt;
-export default {
+  export default {
     methods:{
-      click:function () {
+      click() {
         alert("你点击了按钮")
       }
     }
-}
+  }
 &lt;/script&gt;
           </code>
       </pre>
+    </div>
+
+    <h3>v-model</h3>
+    <p>v-model用于input中数据的双向绑定</p>
+    <div class="page_content">
+      <div class="page_code">
+        <el-input v-model="input" :placeholder="placeholder" style="width: 200px"></el-input>
+      </div>
+      <pre>
+        <code class="hljs">&lt;template&gt;
+  &lt;el-input v-model=<span class="hljs-string">"input"</span> :placeholder="placeholder"&gt;&lt;/el-input>
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data() {
+      return {
+        input: '{{input}}',
+        placeholder: '请输入内容'
+      }
+    }
+  }
+&lt;/script&gt;
+          </code>
+        </pre>
+    </div>
+
+    <p>v-model实际是语法糖，原理实现:value绑定对应值，input属性能监听input标签中数据的变化，当数据发生改变时，进行对inputText值的修改</p>
+    <div class="page_content">
+      <div class="page_code">
+        <input :value="inputText" @input="inputChange" :placeholder="placeholder" style="width: 200px"></input>
+      </div>
+      <pre>
+        <code class="hljs">&lt;template&gt;
+  &lt;input :value=<span class="hljs-string">"inputText"</span> @input=<span
+              class="hljs-string">"inputChange"</span> :placeholder="placeholder"&gt;&lt;/input>
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data() {
+      return {
+        inputText: '{{inputText}}',
+        placeholder: '请输入内容'
+      }
+    },
+    methods: {
+      inputChange(event) {
+        this.inputText = event.target.value;
+      }
+    }
+  }
+&lt;/script&gt;
+          </code>
+        </pre>
     </div>
   </section>
 </template>
@@ -54,28 +113,21 @@ export default {
     data() {
       return {
         input: '',
+        inputText: '',
         placeholder: '请输入内容'
       }
     },
-    methods:{
-      click:function () {
+    methods: {
+      click() {
         alert("你点击了按钮")
+      },
+      inputChange(event) {
+        this.inputText = event.target.value;
       }
     }
   }
 </script>
 
-<style>
-  .hljs-string {
-    color: #756bb1;
-  }
-
-  .page_component > .page_content {
-    margin-top: 20px;
-    border: 1px solid #E4E7ED;
-  }
-
-  .page_content > .page_code {
-    margin: 20px 0 0 20px;
-  }
+<style scoped>
+  @import "../../public/CSS/style.css";
 </style>

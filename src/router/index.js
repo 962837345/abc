@@ -26,6 +26,16 @@ Vue.use(VueRouter);
           path: 'vModel',
           name: 'vModel',
           component: () => import('../views/VModel.vue')
+        },
+        {
+          path: 'v-showAndV-if',
+          name: 'v-showAndV-if',
+          component: () => import('../views/V-showAndV-if.vue')
+        },
+        {
+          path: 'data',
+          name: 'data',
+          component: () => import('../views/Data.vue')
         }
       ]
     },
@@ -44,5 +54,10 @@ const router = new VueRouter({
   mode:'history',
   routes
 });
+
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 export default router
