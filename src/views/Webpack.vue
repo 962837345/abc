@@ -167,5 +167,5 @@ module.export{
 </script>
 
 <style scoped>
-  @import "../../public/CSS/style.css";
+
 </style>

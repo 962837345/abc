@@ -35,5 +35,5 @@
 </script>
 
 <style scoped>
-  @import "../../public/CSS/style.css";
+  @import "../assets/css/style.css";
 </style>

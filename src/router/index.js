@@ -4,54 +4,81 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter);
 
-  const routes = [
+const routes = [
   {
     path: '/',
     redirect: '/home'
   },
-    {
-      path: '/home',
-      component: Home,
-      children:[
-        {
-          path: '',
-          redirect: 'webpack'
-        },
-        {
-          path: 'webpack',
-          name: 'webpack',
-          component: () => import('../views/Webpack.vue')
-        },
-        {
-          path: 'vModel',
-          name: 'vModel',
-          component: () => import('../views/VModel.vue')
-        },
-        {
-          path: 'v-showAndV-if',
-          name: 'v-showAndV-if',
-          component: () => import('../views/V-showAndV-if.vue')
-        },
-        {
-          path: 'data',
-          name: 'data',
-          component: () => import('../views/Data.vue')
-        }
-      ]
-    },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited. 懒加载路由方式
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-
+    path: '/home',
+    component: Home,
+    children: [
+      {
+        path: '',
+        redirect: 'webpack'
+      },
+      {
+        path: 'webpack',
+        name: 'webpack',
+        meta: {
+          title: 'webpack的使用'
+        },
+        component: () => import('../views/Webpack.vue')
+      },
+      {
+        path: 'vModel',
+        name: 'vModel',
+        meta: {
+          title: 'v-model的使用及实现原理'
+        },
+        component: () => import('../views/VModel.vue')
+      },
+      {
+        path: 'v-showAndV-if',
+        name: 'v-showAndV-if',
+        meta: {
+          title: 'v-show和v-if的区别'
+        },
+        component: () => import('../views/V-showAndV-if.vue')
+      },
+      {
+        path: 'vueCom',
+        name: 'vueCom',
+        meta: {
+          title: 'vue中的通信'
+        },
+        component: () => import('../views/VueCommunication.vue')
+      },
+      {
+        path: 'routerCom',
+        name: 'routerCom',
+        meta: {
+          title: 'vue-router的使用'
+        },
+        component: () => import('../views/RouterCommunication.vue')
+      },
+      {
+        path: 'promise',
+        name: 'promise',
+        meta: {
+          title: 'promise的使用'
+        },
+        component: () => import('../views/Promise.vue')
+      },
+      {
+        path: 'vuex',
+        name: 'vuex',
+        meta: {
+          title: 'vuex的使用'
+        },
+        component: () => import('../views/Vuex.vue')
+      }
+    ]
+  }
 ];
 
 const router = new VueRouter({
-  mode:'history',
+  mode: 'history',
   routes
 });
 
