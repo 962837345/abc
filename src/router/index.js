@@ -72,6 +72,22 @@ const routes = [
           title: 'vuex的使用'
         },
         component: () => import('../views/Vuex.vue')
+      },
+      {
+        path: 'axios',
+        name: 'axios',
+        meta: {
+          title: 'axios的使用'
+        },
+        component: () => import('../views/Axios.vue')
+      },
+      {
+        path: 'jsFunction',
+        name: 'jsFunction',
+        meta: {
+          title: 'Js高阶函数的使用'
+        },
+        component: () => import('../views/JsFunction')
       }
     ]
   }

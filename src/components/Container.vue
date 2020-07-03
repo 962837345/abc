@@ -40,6 +40,7 @@
     text-align: left;
     color: #333;
     line-height: 200px;
+    border-right: solid 1px #e6e6e6;
   }
 
   .el-main {

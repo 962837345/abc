@@ -16,15 +16,13 @@ Vue.use(MenuItem);
 Vue.use(Input);
 Vue.use(Button);
 
-import axios from 'axios'
-
 
 Vue.config.productionTip = false;
 
 router.beforeEach((to,from,next) => {
   document.title = to.meta.title;
   next();
-})
+});
 
 
 new Vue({

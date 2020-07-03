@@ -11,6 +11,8 @@
       <el-menu-item index="/home/routerCom">vue-router的使用</el-menu-item>
       <el-menu-item index="/home/promise">promise的使用</el-menu-item>
       <el-menu-item index="/home/vuex">vuex的使用</el-menu-item>
+      <el-menu-item index="/home/axios">axios的使用</el-menu-item>
+      <el-menu-item index="/home/jsFunction">Js高阶函数的使用</el-menu-item>
     </el-menu>
   </el-row>
 </template>
@@ -35,6 +37,10 @@
 
   .router-link-active {
     color: #409EFF;
+  }
+
+  .el-menu-vertical-demo{
+    border: 0;
   }
 </style>
 
