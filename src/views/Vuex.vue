@@ -21,9 +21,9 @@
       </pre>
     </div>
 
-    <h3>Mutation</h3>
-    <p>Mutation存放一些同步操作</p>
-    <p>Mutation需要通过this.$store.commit('mutations中的函数名','可选参数')进行调用</p>
+    <h3>Mutations</h3>
+    <p>Mutations存放一些同步操作</p>
+    <p>Mutations需要通过this.$store.commit('mutations中的函数名','可选参数')进行调用</p>
     <p>多参数传递时通常使用对象进行传参</p>
     <div class="page_content">
       <div class="page_code">
@@ -66,9 +66,9 @@ mutations: {
       </pre>
     </div>
 
-    <h3>Action</h3>
-    <p>Action用于做一些异步操作</p>
-    <p>Action需要通过this.$store.dispatch('actions中的函数名','可选参数')进行调用</p>
+    <h3>Actions</h3>
+    <p>Actions用于做一些异步操作</p>
+    <p>Actions需要通过this.$store.dispatch('actions中的函数名','可选参数')进行调用</p>
     <p>传参可以传数值或字符串也可以传一个对象</p>
     <p>在showMessage中返回一个Promise对象，然后在对应使用dispatch的地方使用then进行回调，达到数据响应通知的目的，是一种优雅的写法</p>
     <div class="page_content">
@@ -145,8 +145,8 @@ getters: {
       </pre>
     </div>
 
-    <h3>Module</h3>
-    <p>Vuex允许我们将store分割成模块，而每个模块拥有总结的state、mutations、actions、getters</p>
+    <h3>Modules</h3>
+    <p>Vuex允许我们将store分割成模块，而每个模块拥有自己的state、mutations、actions、getters</p>
 
   </section>
 </template>
