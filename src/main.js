@@ -16,6 +16,9 @@ Vue.use(MenuItem);
 Vue.use(Input);
 Vue.use(Button);
 
+import toast from 'components/common/toast/index'
+
+Vue.use(toast)
 
 Vue.config.productionTip = false;
 
@@ -24,6 +27,7 @@ router.beforeEach((to,from,next) => {
   next();
 });
 
+Vue.prototype.$bus = new Vue()
 
 new Vue({
   router,

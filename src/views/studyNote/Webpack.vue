@@ -1,72 +1,72 @@
 <template>
-    <section class="page_component">
-      <h2>webpack的使用</h2>
+  <section class="page_component">
+    <h2>webpack的使用</h2>
 
-      <h3>cnpm淘宝镜像安装</h3>
-      <p>npm安装过慢时，使用cnpm进行安装</p>
-      <pre>
+    <h3>cnpm淘宝镜像安装</h3>
+    <p>npm安装过慢时，使用cnpm进行安装</p>
+    <pre>
       <code class="hljs">npm install -g cnpm --registry=https://registry.npm.taobao.org</code>
     </pre>
 
-      <h3>安装</h3>
-      <p>使用npm安装webpack</p>
-      <pre>
+    <h3>安装</h3>
+    <p>使用npm安装webpack</p>
+    <pre>
       <code class="hljs">npm install webpack -D</code>
     </pre>
 
-      <h3>css文件的处理</h3>
-      <p>使用npm安装css-loader</p>
-      <pre>
+    <h3>css文件的处理</h3>
+    <p>使用npm安装css-loader</p>
+    <pre>
       <code class="hljs">npm install css-loader -D</code>
       <code class="hljs">npm install style-loader -D</code>
     </pre>
 
-      <h3>less文件的处理</h3>
-      <p>使用npm安装less-loader</p>
-      <pre>
+    <h3>less文件的处理</h3>
+    <p>使用npm安装less-loader</p>
+    <pre>
       <code class="hljs">npm install less-loader -D</code>
     </pre>
 
-      <h3>图片文件的处理</h3>
-      <p>使用npm安装url-loader</p>
-      <pre>
+    <h3>图片文件的处理</h3>
+    <p>使用npm安装url-loader</p>
+    <pre>
       <code class="hljs">npm install url-loader -D</code>
       <code class="hljs">npm install file-loader -D</code>
     </pre>
 
-      <h3>ES6语法处理</h3>
-      <p>使用npm安装babel-loader</p>
-      <pre>
+    <h3>ES6语法处理</h3>
+    <p>使用npm安装babel-loader</p>
+    <pre>
       <code class="hljs">npm install -D babel-loader babel-core babel-preset-es2015</code>
     </pre>
 
-      <h3>使用Vue</h3>
-      <p>使用npm安装vue</p>
-      <pre>
+    <h3>使用Vue</h3>
+    <p>使用npm安装vue</p>
+    <pre>
       <code class="hljs">npm install vue -D</code>
     </pre>
 
-      <h3>处理.vue文件</h3>
-      <p>使用npm安装vue-loader 和 vue-template-compiler</p>
-      <pre>
+    <h3>处理.vue文件</h3>
+    <p>使用npm安装vue-loader 和 vue-template-compiler</p>
+    <pre>
       <code class="hljs">npm install vue-loader vue-template-compiler -D</code>
     </pre>
 
-      <h3>安装HtmlWebpackPlugin插件</h3>
-      <p>使用npm安装HtmlWebpackPlugin插件</p>
-      <pre>
+    <h3>安装HtmlWebpackPlugin插件</h3>
+    <p>使用npm安装HtmlWebpackPlugin插件</p>
+    <pre>
       <code class="hljs">npm install html-webpack-plugin -D</code>
     </pre>
 
-      <h3>搭建本地服务器</h3>
-      <p>使用npm安装webpack-dev-server</p>
-      <pre>
+    <h3>搭建本地服务器</h3>
+    <p>使用npm安装webpack-dev-server</p>
+    <pre>
       <code class="hljs">npm install webpack-dev-server@2.9.1 -D</code>
     </pre>
 
-      <h3>webpack.config.js配置</h3>
-      <p>webpack.config.js基本配置</p>
-      <pre>
+    <h3>webpack.config.js配置</h3>
+    <p>webpack.config.js基本配置</p>
+    <pre>
       <code class="hljs">
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -147,9 +147,9 @@ module.export{
 }</code>
     </pre>
 
-      <h3>package.json中的配置</h3>
-      <p>修改package.json中的scripts</p>
-      <pre>
+    <h3>package.json中的配置</h3>
+    <p>修改package.json中的scripts</p>
+    <pre>
       <code class="hljs">
         "scripts": {
           "build": "webpack",
@@ -157,7 +157,50 @@ module.export{
         }
       </code>
     </pre>
-    </section>
+
+    <h2>vue-cli4.0——Webpack配置</h2>
+    <h3>在根目录创建vue.config.js文件夹</h3>
+    <h3>配置别名</h3>
+    <p>当导入图片等路径需要别名时，在别名前面加个~</p>
+    <pre>
+      <code class="hljs">module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'assets': '@/assets',
+        'common': '@/common',
+        'components': '@/components',
+        'network': '@/network',
+        'views': '@/views'
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+
+
+    <h3>配置scss公共样式</h3>
+    <p></p>
+    <pre>
+      <code class="hljs">module.exports = {
+  chainWebpack: config => {
+    const oneOfsMap = config.module.rule('scss').oneOfs.store
+    oneOfsMap.forEach(item => {
+      item
+          .use('sass-resources-loader')
+          .loader('sass-resources-loader')
+          .options({
+            // 要公用的scss的路径
+            resources: './src/assets/css/base.scss'
+          })
+          .end()
+    })
+  }
+}
+      </code>
+    </pre>
+  </section>
 </template>
 
 <script>

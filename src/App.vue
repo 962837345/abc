@@ -4,8 +4,9 @@
   </div>
 </template>
 
-<style>
-  @import "./assets/css/style.css";
+<style lang="scss">
+  @import "assets/css/style.css";
+
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -27,3 +28,10 @@
   }
 
 </style>
+<script>
+  import MainTabBar from "./components/content/mainTabBar/MainTabBar";
+
+  export default {
+    components: {MainTabBar}
+  }
+</script>

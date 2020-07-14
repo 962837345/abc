@@ -58,19 +58,19 @@
 &lt;script&gt;
   export default {
     data() {
-      return {},
+      return {}
+    }，
     props: {
       message: {
         type: String, //类型限制
         default: '我是默认值',  //默认值
         required: true  //true时为必传值，不传就会报错
-        },
-        fruits: {
-          //类型是对象或者数组时。，默认值必须是一个函数
-          type: Array,
-          default(){
-            return []
-          }
+      },
+      fruits: {
+        //类型是对象或者数组时。，默认值必须是一个函数
+        type: Array,
+        default(){
+          return []
         }
       }
     }
@@ -192,7 +192,7 @@ export default {
 </template>
 
 <script>
-  import Children from "../components/children";
+  import Children from "components/content/study/children.vue";
 
   export default {
     name: "Data",

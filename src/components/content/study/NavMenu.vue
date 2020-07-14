@@ -13,6 +13,7 @@
       <el-menu-item index="/home/vuex">vuex的使用</el-menu-item>
       <el-menu-item index="/home/axios">axios的使用</el-menu-item>
       <el-menu-item index="/home/jsFunction">Js高阶函数的使用</el-menu-item>
+      <el-menu-item index="/home/betterScroll">better-scroll的使用</el-menu-item>
     </el-menu>
   </el-row>
 </template>

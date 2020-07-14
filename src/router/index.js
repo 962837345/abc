@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/studyNote/Home.vue'
 
 Vue.use(VueRouter);
 
@@ -9,6 +9,53 @@ const routes = [
     path: '/',
     redirect: '/home'
   },
+  {
+    path: '/mall',
+    redirect: '/mall/myHome',
+    component: () => import('../views/mall/Mall.vue'),
+    children: [
+      {
+        path: 'myHome',
+        meta: {
+          title: '首页',
+        },
+        component: () => import('../views/home/MyHome.vue')
+      },
+      {
+        path: 'category',
+        meta: {
+          title: '分类',
+        },
+        component: () => import('../views/category/Category.vue')
+      },
+      {
+        path: 'cart',
+        meta: {
+          title: '购物车',
+        },
+        component: () => import('../views/cart/Cart.vue')
+      },
+      {
+        path: 'profile',
+        meta: {
+          title: '个人中心',
+        },
+        component: () => import('../views/profile/Profile.vue')
+      },
+      {
+        path: 'detail/:iid',
+        meta: {
+          title: '详情',
+        },
+        component: () => import('../views/detail/Detail.vue')
+      }
+    ]
+  },
+  {
+    path: '/mainTabBar',
+    component: () => import('../components/content/mainTabBar/MainTabBar.vue'),
+  },
+
   {
     path: '/home',
     component: Home,
@@ -23,7 +70,7 @@ const routes = [
         meta: {
           title: 'webpack的使用'
         },
-        component: () => import('../views/Webpack.vue')
+        component: () => import('../views/studyNote/Webpack.vue')
       },
       {
         path: 'vModel',
@@ -31,7 +78,7 @@ const routes = [
         meta: {
           title: 'v-model的使用及实现原理'
         },
-        component: () => import('../views/VModel.vue')
+        component: () => import('../views/studyNote/VModel.vue')
       },
       {
         path: 'v-showAndV-if',
@@ -39,7 +86,7 @@ const routes = [
         meta: {
           title: 'v-show和v-if的区别'
         },
-        component: () => import('../views/V-showAndV-if.vue')
+        component: () => import('../views/studyNote/V-showAndV-if.vue')
       },
       {
         path: 'vueCom',
@@ -47,7 +94,7 @@ const routes = [
         meta: {
           title: 'vue中的通信'
         },
-        component: () => import('../views/VueCommunication.vue')
+        component: () => import('../views/studyNote/VueCommunication.vue')
       },
       {
         path: 'routerCom',
@@ -55,7 +102,7 @@ const routes = [
         meta: {
           title: 'vue-router的使用'
         },
-        component: () => import('../views/RouterCommunication.vue')
+        component: () => import('../views/studyNote/RouterCommunication.vue')
       },
       {
         path: 'promise',
@@ -63,7 +110,7 @@ const routes = [
         meta: {
           title: 'promise的使用'
         },
-        component: () => import('../views/Promise.vue')
+        component: () => import('../views/studyNote/Promise.vue')
       },
       {
         path: 'vuex',
@@ -71,7 +118,7 @@ const routes = [
         meta: {
           title: 'vuex的使用'
         },
-        component: () => import('../views/Vuex.vue')
+        component: () => import('../views/studyNote/Vuex.vue')
       },
       {
         path: 'axios',
@@ -79,7 +126,7 @@ const routes = [
         meta: {
           title: 'axios的使用'
         },
-        component: () => import('../views/Axios.vue')
+        component: () => import('../views/studyNote/Axios.vue')
       },
       {
         path: 'jsFunction',
@@ -87,14 +134,22 @@ const routes = [
         meta: {
           title: 'Js高阶函数的使用'
         },
-        component: () => import('../views/JsFunction')
-      }
+        component: () => import('../views/studyNote/JsFunction')
+      },
+      {
+        path: 'betterScroll',
+        name: 'betterScroll',
+        meta: {
+          title: 'better-scroll的使用'
+        },
+        component: () => import('../views/studyNote/BetterScroll')
+      },
     ]
   }
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  //mode: 'history',
   routes
 });
 

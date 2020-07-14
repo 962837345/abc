@@ -29,3 +29,20 @@ export function request(config) {
 
   return instance(config)
 }
+
+export function requestData(config) {
+  //创建axios实例
+  const instance = axios.create({
+    baseURL: 'http://123.207.32.32:8000',
+    timeout: 5000
+  });
+  //响应拦截
+  instance.interceptors.response.use(res => {
+    // 只返回data，不返回额外附加的一些属性
+    return res.data
+  },err => {
+    console.log(err);
+  });
+
+  return instance(config)
+}

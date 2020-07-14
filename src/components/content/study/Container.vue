@@ -1,6 +1,9 @@
 <template>
   <el-container>
-    <el-header style="height: 60px">Vue学习笔记</el-header>
+    <el-header style="height: 60px">
+      Vue学习笔记
+      <router-link to="/mall" class="link">蘑菇商城Demo</router-link>
+    </el-header>
     <el-container>
       <el-aside width="250px">
         <NavMenu></NavMenu>
@@ -11,7 +14,7 @@
 </template>
 
 <script>
-  import NavMenu from '@/components/NavMenu.vue'
+  import NavMenu from 'components/content/study/NavMenu.vue'
 
   export default {
     name: "Container",
@@ -50,5 +53,10 @@
 
   body .el-scrollbar__wrap {
     overflow-x: hidden;
+  }
+
+  .link{
+    float: right;
+    color: #409EFF;
   }
 </style>

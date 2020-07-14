@@ -6,7 +6,7 @@
 
 <script>
    // @ is an alias to /src
-  import Container from '@/components/Container.vue'
+  import Container from 'components/content/study/Container.vue'
 
   export default {
     name: 'Home',

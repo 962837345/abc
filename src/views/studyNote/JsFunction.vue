@@ -123,7 +123,7 @@
     },
     methods: {
       mapClick() {
-        this.array = this.array.map(x => x * x);
+        this.mapArray = this.mapArray.map(x => x * x);
       },
       reduceClick() {
         this.reduceNum = this.reduceArray.reduce((x, y) => x + y)
