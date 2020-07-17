@@ -1,7 +1,6 @@
 <template>
   <section class="page_component">
     <h2>webpack的使用</h2>
-
     <h3>cnpm淘宝镜像安装</h3>
     <p>npm安装过慢时，使用cnpm进行安装</p>
     <pre>

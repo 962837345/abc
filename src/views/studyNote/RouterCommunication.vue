@@ -50,11 +50,11 @@
       <pre>
         <code class="hljs">&lt;template&gt;
   &lt;el-menu-item :index=<span class="hljs-string">"'/home/vueCom/'+userId"</span>&gt;vue中的通信&lt;/el-menu-item&gt;
-&lt;template&gt;
+&lt;/template&gt;
 或
 &lt;template&gt;
   &lt;router-view :to=<span class="hljs-string">"'/home/vueCom/'+userId"</span>&gt;&lt;/router-view&gt;
-&lt;template&gt;
+&lt;/template&gt;
 
 &lt;script&gt;
   export default {

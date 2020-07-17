@@ -20,6 +20,10 @@
         type: Boolean,
         default: false
       },
+      mouseWheel:{
+        type: Boolean,
+        default: true
+      },
       data: {
         type: Array,
         default: () => {
@@ -40,7 +44,8 @@
         // 2.在手指拖动的过程中侦测，而手指离开时的惯性不侦测
         // 3.只要是滚动都侦测惯性
         probeType: this.probeType,
-        pullUpLoad: this.pullUpLoad
+        pullUpLoad: this.pullUpLoad,
+        mouseWheel: this.mouseWheel
       })
 
       //2.监听滚动的位置
